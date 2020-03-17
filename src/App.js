@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    pokemon: null,
+  }
+
+  componentDidMount(){
+    this.fetchPokemon();
+  }
+
+  fetchPokemon() {
+    axios.get('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json')
+      .then(res => 
+        this.setState({pokemon: JSON.stringify(res.data.pokemon)}))
+      .catch(error => 
+        console.log('error has occured!'));
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <div className="container">
+          <h1>Pokedex</h1>
+          <hr />
+
+          {this.state.pokemon}
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;
