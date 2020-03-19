@@ -1,38 +1,35 @@
+.container{
+  background-color: darkcyan;
+  min-height: 800px;
+}
 .App {
   text-align: center;
+  background-color: aqua;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.titleStyle {
+  padding: 35px;
+}
+.headerStyle {
+  padding: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.typeAndWeakness {
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.typeStyle {
+  display: inline-block;
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
-}
+.weaknessStyle {
+  display: inline-block;
+  
+  font-weight: 600;
+} 
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.PokeCard {
+  width: 200;
+  border: solid;
 }
